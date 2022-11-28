@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VPv-vw-Eie">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3zg-2Z-iql">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,19 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="bgL-qS-v6N">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="pE9-je-qEO">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Todoey" id="v2d-T6-dqN">
-                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="R2z-iQ-ixE">
-                                        <connections>
-                                            <action selector="addButtonPressed:" destination="VPv-vw-Eie" id="q8T-N7-3iy"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="VPv-vw-Eie" id="H0Z-C3-7hW"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoItemCell" id="m9N-Qn-LWu">
                                 <rect key="frame" x="0.0" y="94" width="393" height="43.666667938232422"/>
@@ -45,10 +40,34 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="plX-A7-eWE"/>
+                    <navigationItem key="navigationItem" id="plX-A7-eWE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="R2z-iQ-ixE">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="VPv-vw-Eie" id="q8T-N7-3iy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zir-WN-O6Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2964.1221374045799" y="-92.253521126760575"/>
+        </scene>
+        <!--Todoey-->
+        <scene sceneID="iED-gj-NNK">
+            <objects>
+                <navigationController title="Todoey" automaticallyAdjustsScrollViewInsets="NO" id="3zg-2Z-iql" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9zp-Ja-B8W">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VPv-vw-Eie" kind="relationship" relationship="rootViewController" id="lys-o1-Tgo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SPh-EH-4HR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2037.4045801526718" y="-92.253521126760575"/>
         </scene>
